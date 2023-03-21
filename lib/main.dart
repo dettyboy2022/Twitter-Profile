@@ -49,20 +49,31 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: SingleChildScrollView(
         child: Column(
-          children: const [
-            // Stack(
-            //   children: const [
-            //     Positioned(
-            //       bottom: 0,
-            //       child: CircleAvatar(
-            //         radius: 30,
-            //         backgroundColor: Colors.red,
-            //         child: Icon(Icons.image),
-            //       ),
-            //     )
-            //   ],
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  CircleAvatar(
+                    radius: 35,
+                    child: Icon(Icons.person_2_outlined),
+                  ),
+                  CircleAvatar(
+                    radius: 35,
+                    child: Icon(Icons.person_2_outlined),
+                  ),
+                ],
+              ),
+            ),
+            // const ListTile(
+            //   leading: Icon(
+            //     Icons.percent,
+            //     color: Colors.red,
+            //   ),
             // ),
-            BodyTab(),
+            const BodyTab(),
           ],
         ),
       ),
@@ -81,24 +92,12 @@ class _MyHomePageState extends State<MyHomePage> {
         BottomNavigationBarItem(icon: Icon(Icons.inbox_outlined), label: 'Home')
       ]),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          const AnimatedPositioned(
-            curve: Curves.fastOutSlowIn,
-            duration: Duration(seconds: 1),
-            child: Text(
-              'hello',
-              style: TextStyle(color: Colors.red),
-            ),
-          );
-        },
+        onPressed: () {},
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
-
-
-
 
 class BodyTab extends StatefulWidget {
   const BodyTab({super.key});
@@ -141,7 +140,7 @@ class _BodyTabState extends State<BodyTab> with TickerProviderStateMixin {
         // ignore: sized_box_for_whitespace
         Container(
           height: MediaQuery.of(context).size.height,
-          color: const Color.fromARGB(115, 96, 89, 89),
+          color: const Color.fromARGB(115, 0, 0, 0),
           child: TabBarView(controller: tabControll, children: const [
             Tweets(),
             Replies(),
