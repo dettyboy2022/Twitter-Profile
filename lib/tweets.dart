@@ -14,21 +14,12 @@ class _TweetsState extends State<Tweets> {
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita impedit eos commodi ea accusamus dolorem mollitia sequi voluptates.',
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita impedit eos commodi ea accusamus dolorem mollitia sequi voluptates.',
     5,
-    'I love Flutter',
-    'I love Flutter',
-    'I love Flutter',
-    'I love Flutter',
-    'I love Flutter',
-    'I love Flutter',
-    'I love Flutter',
-    'I love Flutter',
-    'I love Flutter',
-    'I love Flutter',
-    'I love Flutter',
-    'I love Flutter',
-    'I love Flutter',
-    'I love Flutter',
-    'I love Flutter',
+    'Welcome To Flutter',
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita impedit eos commodi ea accusamus dolorem mollitia sequi',
+    'I love Flutter Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita impedit eos commodi ea accusamus dolorem mollitia sequi',
+    'Qwerty Lorem ipsum',
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita impedit eos commodi ea accusamus dolorem mollitia sequi',
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita impedit eos commodi ea accusamus dolorem mollitia sequi',
   ];
 
   @override
@@ -43,7 +34,7 @@ class _TweetsState extends State<Tweets> {
             return Container(
               decoration: const BoxDecoration(
                   border: Border(
-                      top: BorderSide(width: 0.5, color: Colors.grey),
+                      top: BorderSide(width: 1, color: Colors.grey),
                       bottom: BorderSide(width: 0.5, color: Colors.grey))),
               child: ListTile(
                 onTap: (() {}),
@@ -78,7 +69,7 @@ class _TweetsState extends State<Tweets> {
                           color: Colors.grey,
                         ),
                         Icon(
-                          Icons.local_activity_outlined,
+                          Icons.view_stream,
                           color: Colors.grey,
                         ),
                       ],
@@ -87,7 +78,9 @@ class _TweetsState extends State<Tweets> {
                 ),
                 //
                 trailing: PopupMenuButton(
-                  color: Colors.white,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15)),
+                  color: const Color.fromARGB(255, 106, 105, 105),
                   child: const Text(
                     '....',
                     style: TextStyle(
@@ -96,17 +89,50 @@ class _TweetsState extends State<Tweets> {
                         fontWeight: FontWeight.bold),
                   ),
                   itemBuilder: (context) => [
-                    const PopupMenuItem(
-                      child: Text('Delete'),
+                    PopupMenuItem(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: const [
+                          Text('Delete Tweet',
+                              style: TextStyle(
+                                color: Colors.red,
+                              )),
+                          Icon(
+                            Icons.delete,
+                            color: Colors.red,
+                          )
+                        ],
+                      ),
                     ),
-                    const PopupMenuItem(
-                      child: Text('Pin to your profile'),
+                    PopupMenuItem(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: const [
+                          Text('Pin to your profile',
+                              style: TextStyle(color: Colors.white)),
+                          Icon(Icons.pin_drop)
+                        ],
+                      ),
                     ),
-                    const PopupMenuItem(
-                      child: Text('Change who can reply'),
+                    PopupMenuItem(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: const [
+                          Text('Change who can reply',
+                              style: TextStyle(color: Colors.white)),
+                          Icon(Icons.reply)
+                        ],
+                      ),
                     ),
-                    const PopupMenuItem(
-                      child: Text('Add/remove from Lists'),
+                    PopupMenuItem(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: const [
+                          Text('Add/remove from Lists',
+                              style: TextStyle(color: Colors.white)),
+                          Icon(Icons.list)
+                        ],
+                      ),
                     ),
                   ],
                 ),

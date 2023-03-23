@@ -50,29 +50,57 @@ class _MyHomePageState extends State<MyHomePage> {
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  CircleAvatar(
-                    radius: 35,
+                children: [
+                  const CircleAvatar(
+                    radius: 25,
                     child: Icon(Icons.person_2_outlined),
                   ),
-                  CircleAvatar(
-                    radius: 35,
-                    child: Icon(Icons.person_2_outlined),
-                  ),
+                  ElevatedButton(
+                      onPressed: () {}, child: const Text('Edit Profile'))
                 ],
               ),
             ),
-            // const ListTile(
-            //   leading: Icon(
-            //     Icons.percent,
-            //     color: Colors.red,
-            //   ),
-            // ),
+            const ListTile(
+              title: Text(
+                'Username',
+                style: TextStyle(color: Colors.white),
+              ),
+              subtitle: Text(
+                '@DettyBoy',
+                style: TextStyle(color: Colors.grey),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              child: Row(
+                children: const [
+                  Text(
+                    'Lagos Nigeria',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  SizedBox(
+                    width: 30,
+                  ),
+                  Text(
+                    'Born 1 February 1945',
+                    style: TextStyle(color: Colors.white),
+                  )
+                ],
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+              child: Text(
+                'Joined June 2018',
+                style: TextStyle(color: Colors.grey),
+              ),
+            ),
             const BodyTab(),
           ],
         ),
