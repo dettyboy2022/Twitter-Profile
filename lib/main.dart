@@ -101,6 +101,24 @@ class _MyHomePageState extends State<MyHomePage> {
                 style: TextStyle(color: Colors.grey),
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              child: Row(
+                children: const [
+                  Text(
+                    '1000 Followers',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  SizedBox(
+                    width: 30,
+                  ),
+                  Text(
+                    '2000 Following',
+                    style: TextStyle(color: Colors.white),
+                  )
+                ],
+              ),
+            ),
             const BodyTab(),
           ],
         ),
