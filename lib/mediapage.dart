@@ -10,8 +10,15 @@ class MediaPage extends StatefulWidget {
 class _MediaPageState extends State<MediaPage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-        color: Colors.yellow,
-        );
+    return const Scaffold(
+      body: Center(
+        heightFactor: 20,
+        child: Text(
+          'No Media',
+          style: TextStyle(
+              color: Colors.black, fontWeight: FontWeight.bold, fontSize: 20),
+        ),
+      ),
+    );
   }
 }

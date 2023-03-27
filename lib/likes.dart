@@ -10,8 +10,15 @@ class Likes extends StatefulWidget {
 class _LikesState extends State<Likes> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.green,
+    return const Scaffold(
+      body: Center(
+        heightFactor: 20,
+        child: Text(
+          'No Likes',
+          style: TextStyle(
+              color: Colors.black, fontWeight: FontWeight.bold, fontSize: 20),
+        ),
+      ),
     );
   }
 }

@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Twitter Profile Clone'),
+      home: const MyHomePage(title: 'Twitter Profile'),
     );
   }
 }
@@ -42,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
         centerTitle: true,
-        toolbarHeight: 80,
+        // toolbarHeight: 80,
         actions: [
           IconButton(onPressed: (() {}), icon: const Icon(Icons.search)),
         ],
@@ -62,7 +62,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Icon(Icons.person_2_outlined),
                   ),
                   ElevatedButton(
-                      onPressed: () {}, child: const Text('Edit Profile'))
+                      style: ElevatedButton.styleFrom(
+                          side: const BorderSide(color: Colors.white),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15)),
+                          backgroundColor: Colors.transparent),
+                      onPressed: () {},
+                      child: const Text('Edit Profile'))
                 ],
               ),
             ),
@@ -106,14 +112,14 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Row(
                 children: const [
                   Text(
-                    '1000 Followers',
+                    '1054 Followers',
                     style: TextStyle(color: Colors.white),
                   ),
                   SizedBox(
                     width: 30,
                   ),
                   Text(
-                    '2000 Following',
+                    '2657 Following',
                     style: TextStyle(color: Colors.white),
                   )
                 ],
@@ -144,6 +150,8 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+
+
 
 class BodyTab extends StatefulWidget {
   const BodyTab({super.key});
@@ -183,7 +191,6 @@ class _BodyTabState extends State<BodyTab> with TickerProviderStateMixin {
             ),
           ],
         ),
-        // ignore: sized_box_for_whitespace
         Container(
           height: MediaQuery.of(context).size.height,
           color: const Color.fromARGB(115, 0, 0, 0),
